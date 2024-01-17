@@ -1,0 +1,48 @@
+---
+interface Props {
+	title: string;
+}
+import Header from '../components/Header.astro';
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link href="https://fonts.cdnfonts.com/css/uefa-supercup" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header/>
+		<slot />
+	</body>
+</html>
+<style is:global>	
+	:root {		
+		color-scheme: light;
+	}
+	a{
+		align-self: center;
+	}
+	html {
+		font-family: 'UEFA Supercup', sans-serif;
+	}	
+	body{
+		background: rgb(66,83,255);
+		background: linear-gradient(180deg, rgba(66,83,255,1) 29%, rgba(1,240,221,1) 100%);		
+		min-height: 100dvh;		
+		/* display: flex; */
+		/* justify-content: center; */
+	}
+	h1,h2,h3{
+		font-family: 'Montserrat', sans-serif;
+	}
+</style>
