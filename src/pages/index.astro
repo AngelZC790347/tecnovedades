@@ -8,11 +8,20 @@ import Card from '../components/Card.astro';
 		<!-- <div class=" overflow-hidden">
 			<img src="landing2.png" width="900" alt="">
 		</div> -->
-		<div class="h-1/2 flex justify-center">
-			
+		<div class="relative min-h-[600px]  mx-auto">
+			<div id="bg-g"></div>
+			<div class="fixed z-20 bottom-0 top-0 w-full h-full bg-gradient-to-b from-transparent via-black/20 to-black/50"></div>
+			<h1 class="absolute  z-20 right-0 left-0 text-center px-32 bottom-1/4">Agencia de Diseño de Paginas Webs <span class="block py-4">Ponemos tu negocio en 5 dias</span></h1>
+			<span class="absolute bottom-32 left-0 right-0 z-20 text-center"><button class=" bg-white px-4 py-1 shadow-md hover:bg-black hover:text-white hover:scale-105 transition ease-in duration-300">Comunicate con un asesor</button></span>						
+			<div class="h-full fixed top-0 left-0 right-0 bottom-0 opacity-90 bg-cover bg-center bg-no-repeat bg-blend-luminosity" style="background-image: url(https://tecnovedadesweb.com/wp-content/uploads/2023/05/paginas-web-en-lima-tecnovedades.webp)"></div>
+		  </div>
+		<div class="h-1/2 flex justify-center z-40 text-white">						
 			<div class="h-full w-2/4 grid grid-cols-2 rounded-md p-10 gap-20">				
 				<img src="logotipo.png" alt="" class="mx-auto">
-				<div class="flex flex-col justify-center"><p class="text-slate-50 text-pretty">Tecnovedades, una firma especializada en
+				<div class="flex flex-col justify-center">
+					<h2>
+						DISEÑO WEB PROFESIONAL</h2>
+					<p class="text-pretty">Tecnovedades, una firma especializada en
 					diseño web con una sólida presencia en
 					Lima, Perú, respalda su concepto de marca,
 					“Amamos lo que hacemos”, a través de una
@@ -35,11 +44,12 @@ import Card from '../components/Card.astro';
 		z-index: -1;
 	} */
 	h1 {
-		font-size: 4rem;
+		/* font-size: 4rem; */
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
+		color: white;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
@@ -59,17 +69,25 @@ import Card from '../components/Card.astro';
 		font-size: 0.8em;
 		font-weight: bold;
 		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
+		color:white;
 		border-radius: 4px;
 		padding: 0.3em 0.4em;
 	}
 	.instructions strong {
-		color: rgb(var(--accent-light));
+		color:white;
 	}
 	.link-card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+	#bg-g{
+		position: fixed;
+		top:0;
+		bottom: 0;
+		width: 100%;
+		z-index: 9;
+		background-image:linear-gradient(0deg, #0066FFD1 20%, rgba(0, 17, 255, 0) 100%);
 	}
 </style>

@@ -26,8 +26,17 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>	
-	:root {		
-		color-scheme: light;
+	:root{
+	--bg-color-1: #4253FF;
+	--bg-color-2:#091929;
+	--fg-color-1:white;
+	--fg-color-2:#01F0DD;
+	--fg-color-3:#ff7c1d;
+	--size-title:100px;
+	--size-small:0.8rem;
+	--size-medium:1.1rem;
+	--size-large:2.5rem;
+	--size-xl:3rem;
 	}
 	a{
 		align-self: center;
@@ -37,12 +46,26 @@ const { title } = Astro.props;
 	}	
 	body{
 		background: rgb(66,83,255);
-		background: linear-gradient(180deg, rgba(66,83,255,1) 29%, rgba(1,240,221,1) 100%);		
+		background: linear-gradient(180deg, rgba(66,83,255,1) 0%, rgba(1,240,221,1) 32%, rgba(255,255,255,1) 100%);
 		min-height: 100dvh;		
 		/* display: flex; */
 		/* justify-content: center; */
 	}
 	h1,h2,h3{
 		font-family: 'Montserrat', sans-serif;
+				
 	}
+	h2,h3,h4,h5,h6{
+		font-size: var(--size-large);
+	}
+	*{
+		font-size: var(--size-medium);		
+	}	
+	h1{
+		font-size: var(--size-xl);
+	}
+	a{
+		font-size: var(--size-small);
+	}
+	
 </style>

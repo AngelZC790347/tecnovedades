@@ -1,10 +1,122 @@
-<header class="flex  px-32 w-full justify-around font-medium gap-20 text-slate-50">
-    <img src="logotipo-m.png" width="150" alt="tecnovedades-imagotipo" class="-translate-y-2">
-    <nav class="w-2/3 flex justify-around align-middle]">      
-        <a href="#">Inicio</a>
-        <a>Portfolio</a>
-        <a>Elige tu Web</a>
-        <a>Nosotros</a>
-        <a>Contacto</a>        
+<header>
+    <img src="Imagotipo.png" width="100" class="shadow-slate-950" alt="tecnovedades-imagotipo" >
+    <nav >      
+        <ul>
+        <li>
+          <a href="#0">inicio</a>
+        </li>
+        <li>
+          <a href="#0">portfolio</a>
+        </li>
+        <li>
+          <a href="#0">elige tu web</a>          
+        </li>
+        <li>
+            <a href="#0">nosotros</a>          
+          </li>
+      </ul>
+    </nav>
+   <nav id="nav-r">      
+        <ul>
+        <li>
+          <a href="#0">blog</a>
+        </li>
+        <li>
+          <a href="#0">contacto</a>
+        </li>
+        <li>
+          <a href="#0"></a>
+        </li>
+      </ul>
     </nav>
 </header>
+
+<style>  
+li{
+  list-style-type:none
+}
+
+header{
+    box-shadow:0px 0px 10px 0px rgba(0,0,0,0.5);
+  position:sticky;
+  z-index: 9999;
+  background-color: var(--bg-color-1);  
+  top:0px;    
+  color:var(--fg-color-1);
+
+  display:flex;
+  gap:2rem;
+  padding:0 4%;
+  height: 70px;
+  ul{    
+    margin:0;
+    height:100%;
+    display:flex;
+    gap:1rem;
+    justify-content:space-around;
+    align-items:center;    
+  }
+}
+#nav-r{
+  position:absolute;
+  right:8rem;
+  height:100%;  
+}
+
+a {  
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* Underline styles */
+a {
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+}
+
+/* Fade in */
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--fg-color-1);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+a:hover::after,
+a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* Slide in */
+li:nth-child(2) a {
+  overflow: hidden;
+}
+
+li:nth-child(2) a::after {
+  transform: translate3d(-100%, 0, 0);
+}
+
+li:nth-child(2) a:hover::after,
+li:nth-child(2) a:focus::after{
+  transform: translate3d(0, 0, 0);
+}
+
+/* Scale from center */
+li:nth-child(3) a::after {  
+  transform: scale(0);
+  transform-origin: center;
+}
+
+li:nth-child(3) a:hover::after,
+li:nth-child(3) a:focus::after{
+  transform: scale(1);
+}
+</style>
