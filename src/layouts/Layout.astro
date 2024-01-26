@@ -1,58 +1,70 @@
 ---
 interface Props {
 	title: string;
+	backgoundImg:String;
 }
 import Header from '../components/Header.astro';
-const { title } = Astro.props;
+import Footer from '../components/Footer.astro';
+const { title,backgoundImg} = Astro.props;
+const bgUrl = `url(${backgoundImg})`;
 ---
-
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link href="https://fonts.cdnfonts.com/css/uefa-supercup" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />		
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
+		<!-- BackGround Image -->
+		<div class="absoluteBg"></div>		
 		<Header/>
 		<slot />
+		<Footer/>
 	</body>
 </html>
-<style is:global>	
-	:root{
-	--bg-color-1: #4253FF;
+<style is:global define:vars={{bgUrl}}>	
+	/* Fonts */
+	@font-face {
+		font-family:"Roboto Condensed"; 
+		src: url("./fonts/RobotoCondensed-VariableFont_wght.ttf");
+	}
+	@font-face {
+		font-family: "Roboto";
+		src: url("./fonts/Roboto/Roboto-Regular.ttf");
+	}	
+	:root{	
+	--bg-color-1: #0053E1;
 	--bg-color-2:#091929;
-	--fg-color-1:white;
+	--fg-color-1:#ffffff;;
+	--fgS-color:#333333;
 	--fg-color-2:#01F0DD;
-	--fg-color-3:#ff7c1d;
+	--fg-color-3:#FF9000;
 	--size-title:100px;
-	--size-small:0.8rem;
-	--size-medium:1.1rem;
+	--size-small:10px;
+	--size-medium:14px;
 	--size-large:2.5rem;
 	--size-xl:3rem;
+	--primary-font:"Roboto", Sans-serif;
+	--primary-font-condessed:"Roboto Condensed", Sans-serif;
+	--seconday-font:"Antonio", Sans-serif;
 	}
 	a{
 		align-self: center;
 	}
 	html {
-		font-family: 'UEFA Supercup', sans-serif;
+		font-family: var(--seconday-font);
 	}	
 	body{
-		background: rgb(66,83,255);
-		background: linear-gradient(180deg, rgba(66,83,255,1) 0%, rgba(1,240,221,1) 32%, rgba(255,255,255,1) 100%);
-		min-height: 100dvh;		
-		/* display: flex; */
-		/* justify-content: center; */
+		background: var(--bg-color-1);
+		background: linear-gradient(180deg, rgba(66,83,255,1) 0%, rgba(1,240,221,1) 32%, rgba(255,255,255,1) 100%);			
+		margin: 0;
 	}
 	h1,h2,h3{
-		font-family: 'Montserrat', sans-serif;
+		font-family: var(--primary-font);
 				
 	}
 	h2,h3,h4,h5,h6{
@@ -67,5 +79,16 @@ const { title } = Astro.props;
 	a{
 		font-size: var(--size-small);
 	}
-	
-</style>
+	.absoluteBg{
+		position: absolute;
+		z-index: -1;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;		
+		background-image: linear-gradient(360deg, #0066FFD1 51%, #0066FFD1 96%),var(--bgUrl);
+	}
+</style>	

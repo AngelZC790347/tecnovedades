@@ -1,0 +1,46 @@
+<footer>
+    <nav>
+        <li>>> politicas de privacidad</li>
+        <li>>> terminos y condiciones</li>
+        <li>>> preguntas frecuentes</li>
+        <li>>> blog</li>
+        <li>>> contacto</li>
+    </nav>
+</footer>
+
+<style>
+    footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        
+        background-color: #0066ff;
+    }
+    nav{
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 50px;
+        display: flex;        
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;           
+        li{
+            color:var(--fg-color-1);
+            font-size: var(--size-small);
+            display: block;
+            text-align: center;            
+            width: 20%;
+            height: 100%;            
+            font-family: var(--primary-font);
+            text-transform: capitalize;
+        }
+        @media (max-width: 724px){
+            flex-wrap: wrap;
+            flex-direction: column;
+            li{
+                width: 100%;                
+            }
+        }
+    }
+</style>
