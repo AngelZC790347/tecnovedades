@@ -1,19 +1,16 @@
 <footer>
     <nav>
-        <li>>> politicas de privacidad</li>
-        <li>>> terminos y condiciones</li>
-        <li>>> preguntas frecuentes</li>
-        <li>>> blog</li>
-        <li>>> contacto</li>
+        <li> <a href="">» politicas de privacidad</li></a>
+        <li> <a href="">» terminos y condiciones</li></a>
+        <li> <a href="">» preguntas frecuentes</li></a>
+        <li> <a href="">» blog</li></a>
+        <li> <a href="">» contacto</li></a>
     </nav>
 </footer>
 
 <style>
-    footer{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        
+    footer{        
+        width: 100%;        
         background-color: #0066ff;
     }
     nav{
@@ -31,9 +28,13 @@
             display: block;
             text-align: center;            
             width: 20%;
-            height: 100%;            
+            height: 100%;                   
             font-family: var(--primary-font);
             text-transform: capitalize;
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
         }
         @media (max-width: 724px){
             flex-wrap: wrap;

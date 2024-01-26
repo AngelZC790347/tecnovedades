@@ -34,8 +34,12 @@ const bgUrl = `url(${backgoundImg})`;
 	}
 	@font-face {
 		font-family: "Roboto";
-		src: url("./fonts/Roboto/Roboto-Regular.ttf");
-	}	
+		src: url("./fonts/Roboto/Roboto-Light.ttf");
+	}
+	@font-face{
+		font-family: "Antonio";
+		src: url("./fonts/Antonio/static/Antonio-Light.ttf");
+	}
 	:root{	
 	--bg-color-1: #0053E1;
 	--bg-color-2:#091929;
@@ -44,10 +48,10 @@ const bgUrl = `url(${backgoundImg})`;
 	--fg-color-2:#01F0DD;
 	--fg-color-3:#FF9000;
 	--size-title:100px;
-	--size-small:10px;
-	--size-medium:14px;
-	--size-large:2.5rem;
-	--size-xl:3rem;
+	--size-small:14px;
+	--size-medium:16px;
+	--size-large:40px;
+	--size-xl:49px;
 	--primary-font:"Roboto", Sans-serif;
 	--primary-font-condessed:"Roboto Condensed", Sans-serif;
 	--seconday-font:"Antonio", Sans-serif;
@@ -64,8 +68,8 @@ const bgUrl = `url(${backgoundImg})`;
 		margin: 0;
 	}
 	h1,h2,h3{
-		font-family: var(--primary-font);
-				
+		font-family:var(--seconday-font);
+		margin: 0;
 	}
 	h2,h3,h4,h5,h6{
 		font-size: var(--size-large);
@@ -75,9 +79,15 @@ const bgUrl = `url(${backgoundImg})`;
 	}	
 	h1{
 		font-size: var(--size-xl);
+		font-weight: 600;
+		text-shadow: 12px 3px 13px rgba(0,0,0,0.3);
+		letter-spacing: 0.2;
+		padding: 0;
 	}
 	a{
-		font-size: var(--size-small);
+		font-size: inherit;
+		text-decoration: none;
+		color: inherit;
 	}
 	.absoluteBg{
 		position: absolute;
