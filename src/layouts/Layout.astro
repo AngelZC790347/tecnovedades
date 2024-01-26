@@ -44,7 +44,7 @@ const bgUrl = `url(${backgoundImg})`;
 	--bg-color-1: #0053E1;
 	--bg-color-2:#091929;
 	--fg-color-1:#ffffff;;
-	--fgS-color:#333333;
+	--fg-color:#333333;
 	--fg-color-2:#01F0DD;
 	--fg-color-3:#FF9000;
 	--size-title:100px;
@@ -75,7 +75,8 @@ const bgUrl = `url(${backgoundImg})`;
 		font-size: var(--size-large);
 	}
 	*{
-		font-size: var(--size-medium);		
+		font-size: var(--size-medium);
+		color: var(--fg-color);
 	}	
 	h1{
 		font-size: var(--size-xl);
@@ -88,9 +89,9 @@ const bgUrl = `url(${backgoundImg})`;
 		font-size: inherit;
 		text-decoration: none;
 		color: inherit;
-	}
+	}	
 	.absoluteBg{
-		position: absolute;
+		position: fixed;
 		z-index: -1;
 		top:0;
 		left: 0;

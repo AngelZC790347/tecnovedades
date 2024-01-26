@@ -4,27 +4,63 @@
     </header>
     <main>
         <h3>DISEÑO WEB PROFESIONAL</h3>
-        <p>Entendemos que la motivación principal de nuestros clientes es VENDER, por ello vamos directo al grano y te ayudamos a destacar ante tu competencia mediante una 
-            Página web profesional.
-            Que te permitirá mostrar tus productos y servicios de manera eficaz, manejar ofertas y promociones, y lograr que tus clientes compren de manera sencilla a través de los diferentes medios de pago o ponerse en contacto contigo para poder requerir tus servicios de manera efectiva.</p>
-    </main>
-    
+        <p>Entendemos que la motivación principal de nuestros clientes es VENDER, por ello vamos directo al grano y te ayudamos a destacar ante tu competencia mediante una </p>
+        <p>Página web profesional.</p>
+        <p>Que te permitirá mostrar tus productos y servicios de manera eficaz, manejar ofertas y promociones, y lograr que tus clientes compren de manera sencilla a través de los diferentes medios de pago o ponerse en contacto contigo para poder requerir tus servicios de manera efectiva.</p>
+        <a href="">Conoce nuestros trabajos</a>
+    </main>    
 </article>
 <style>
-    article{
+    article{    
+        width: 100%;        
         background-color: var(--fg-color-1);
         display: flex;        
         justify-content: center;
-        padding:55px 0px;
+        padding:50px 0px;
         header{
             text-align: end;
         }
         img{
-            width: 60%;
-            height: 90%;
+            width: 100%;
+            height: 100%;
         }
-        & > *{
+        & > *{            
+            height: 400px;
+            text-wrap: pretty;
+            overflow-x: visible;
             max-width: 30%;
-        }                
+        } 
+        p{
+            font-family: arial, helvetica, sans-serif;        
+            font-size: 100%;
+            font-weight: 200;
+            line-height: 1.5em;            
+        }     
+        a{
+            font-family: var(--primary-font);
+            font-size: var(--size-medium);
+            font-weight: 600;
+            line-height: 1;
+            display: block;
+            background-color: #0053E1;
+            color: var(--fg-color-1);
+            border: 0px;
+            border-radius: 0px 25px 25px 0px;
+            padding:12px 24px;
+            width: auto;
+            display: inline-block;
+        }
+        @media (max-width: 724px) {
+            &>*{
+                height: 400px;
+                max-width: 100%;
+                padding: 8px 20px;
+            }
+            &>header{
+                text-align: center;
+            }
+            flex-direction: column;
+            align-items: center;            
+        }
     }
 </style>
