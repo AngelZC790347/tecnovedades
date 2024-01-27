@@ -1,13 +1,15 @@
+
 <article>
     <header>
         <img src="https://tecnovedadesweb.com/wp-content/uploads/2022/09/diseno-web-conduce-crecimiento.png" alt="" width="700" height="700">
     </header>
     <main>
         <h3>DISEÑO WEB PROFESIONAL</h3>
-        <p>Entendemos que la motivación principal de nuestros clientes es VENDER, por ello vamos directo al grano y te ayudamos a destacar ante tu competencia mediante una </p>
-        <p>Página web profesional.</p>
-        <p>Que te permitirá mostrar tus productos y servicios de manera eficaz, manejar ofertas y promociones, y lograr que tus clientes compren de manera sencilla a través de los diferentes medios de pago o ponerse en contacto contigo para poder requerir tus servicios de manera efectiva.</p>
-        <a href="">Conoce nuestros trabajos</a>
+        <div>
+           <slot/>
+        </div>        
+        <div><a href="">Conoce nuestros trabajos</a></div>        
+        
     </main>    
 </article>
 <style>
@@ -17,15 +19,26 @@
         display: flex;        
         justify-content: center;
         padding:50px 0px;
+        gap: 3rem;
         header{
             text-align: end;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+        }  
+        h3{
+            color: var(--fg-color-3);
+            font-family: var(--secondary-font);
+            font-weight: 900;
+            text-decoration: solid;
         }
         img{
             width: 100%;
             height: 100%;
-        }
-        & > *{            
             height: 400px;
+        }
+        & > *{                        
             text-wrap: pretty;
             overflow-x: visible;
             max-width: 30%;
@@ -55,6 +68,9 @@
                 height: 400px;
                 max-width: 100%;
                 padding: 8px 20px;
+            }
+            & > main {
+                height: auto;
             }
             &>header{
                 text-align: center;
