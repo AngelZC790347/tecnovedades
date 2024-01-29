@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ImageBanner from '../components/ImageBanner.astro';
+import PrimaryButton from '../components/Buttons/PrimaryButton.astro';
+import Divider from '../components/Divider.astro'
 ---
 
 <Layout title="Welcome to Astro." backgoundImg="./paginas-web-en-lima-tecnovedades.webp">		
@@ -15,28 +17,67 @@ import ImageBanner from '../components/ImageBanner.astro';
 				</span>	
 			</h3>
 			<div class="divider"><span></span></div>
-			<div><button><a href="">Comunicate con un asesor</a></button></div>			
+			<div><PrimaryButton><a href="">Comunicate con un asesor</a></PrimaryButton></div>			
 		</section>
-		<ImageBanner>
-			<div class="separator-img"><img src="https://tecnovedadesweb.com/wp-content/uploads/2022/09/linea.png"  width="290" height="58" alt=""></div>
+		<ImageBanner imageSrc='./diseno-web-conduce-crecimiento.webp' imgDescription='Haz crecer tu negocio' reverse={false}>
+      <h3 slot="bnTitle">DISEÑO WEB PROFESIONAL</h3>
+			<div slot="bnSeparator" class="separator-img"><img src="https://tecnovedadesweb.com/wp-content/uploads/2022/09/linea.png"  width="290" height="58" alt=""></div>
 			<div>
 				<p>Entendemos que la motivación principal de nuestros clientes es VENDER, por ello vamos directo al grano y te ayudamos a destacar ante tu competencia mediante una </p>
             	<p style="font-weight:bold">Página web profesional.</p>
             	<p>Que te permitirá mostrar tus productos y servicios de manera eficaz, manejar ofertas y promociones, y lograr que tus clientes compren de manera sencilla a través de los diferentes medios de pago o ponerse en contacto contigo para poder requerir tus servicios de manera efectiva.</p>
 			</div>
-			
+      <PrimaryButton slot='bnFooter'>Conoce nuestros trabajos aqui</PrimaryButton>
 		</ImageBanner>
-		<div class="sub-tittle-container">
-			<h3>¿Porque Elegirnos?</h3>
-		</div>
-		<ImageBanner>
-			<div class="separator-img"><img src="https://tecnovedadesweb.com/wp-content/uploads/2022/09/linea.png"  width="290" height="58" alt=""></div>
+		<Divider>¿Porque Elegirnos?</Divider>
+		<ImageBanner  imageSrc='./Ponemos-Tu-negocio-en-Google.webp' imgDescription='Tu negocio en interner en 5 dias' reverse>			
 			<div>
-				<p>Entendemos que la motivación principal de nuestros clientes es VENDER, por ello vamos directo al grano y te ayudamos a destacar ante tu competencia mediante una </p>
-            	<p style="font-weight:bold">Página web profesional.</p>
-            	<p>Que te permitirá mostrar tus productos y servicios de manera eficaz, manejar ofertas y promociones, y lograr que tus clientes compren de manera sencilla a través de los diferentes medios de pago o ponerse en contacto contigo para poder requerir tus servicios de manera efectiva.</p>
+				<p>No solo nos limitamos a desarrollar tu página web, te brindamos asesoría para que puedas obtener nuevos clientes.</p>
+        <ul>
+          <li>Colocamos tu negocio en Google</li>
+          <li>Tus números de contacto y correo serán visibles</li>
+          <li>Se mostrará una ficha con la información de tu negocio</li>
+          <li>Aparecerá el mapa para que puedan encontrar facilmente</li>          
+        </ul>
 			</div>
+      <div><img src="./logo-Google.webp" alt="Logo google"></div>
 		</ImageBanner>
+    <ImageBanner imageSrc='./213dasdgdasfdasd.webp' imgDescription='Tecnovedades Agencia de Paginas web' reverse={false}>
+      <h3 slot="bnTitle">ACERCA DE NOSOTROS</h3>
+      <div>
+        <p>En Tecnovedades Web nos dedicamos al <strong>diseño de páginas web en Lima, Perú.</strong></p>
+        <p><strong>¡Amamos lo que hacemos!</strong> Te ayudaremos a que puedas insertarte en el mundo digital para poder promocionar de manera eficaz tus productos y servicios, llegando a nuevos clientes potenciales, aumentando de esta manera tus ventas y tu visibilidad en el mercado.</p>
+        <PrimaryButton slot='bnFooter'>Conoce mas de nosotros</PrimaryButton>
+      </div>
+    </ImageBanner>
+    <Divider>¿QUE INCLUYEN NUESTROS TRABAJOS?</Divider>			
+    <ul class="services-list">
+      <ImageBanner imageSrc='./responsive-diseno-web-tecnovedadesweb-1-1.webp' imgDescription='diseno responsivo' reverse={false}>
+        <h3 slot="bnTitle">DISEÑO RESPONSIVE</h3>
+        <p>Su página web se adaptará a los diferentes dispositivos como tablets, celulares, laptops y computadoras y se seguirá viendo de manera óptima.</p>
+      </ImageBanner>
+      <ImageBanner imageSrc='./panel-administrable-tecnovedadesweb.webp' imgDescription='panel de administracion de paginas web' reverse={false}>
+        <h3 slot="bnTitle">DOMINIO</h3>
+        <p>Te brindamos una dirección web (.com) para que visiten tu página desde cualquier navegador, por ejemplo: minegocio.com </p>
+      </ImageBanner>
+      <ImageBanner imageSrc='./correo-corporativo-tecnovedadesweb.webp' imgDescription='correo corporativo' reverse={false}>
+        <h3 slot="bnTitle">CORREO CORPORATIVO</h3>
+        <p>Cuentas corporativas gratuitas con su propio nombre de dominio, olvídese de responder a sus clientes y proveedores desde una cuenta de Hotmail o Gmail, ahora lo podrá hacer de manera más profesional, por ejemplo contacto@minegocio.com </p>
+      </ImageBanner>
+      <ImageBanner imageSrc='./responsive-diseno-web-tecnovedadesweb-1-1.webp' imgDescription='responsiuve diseno' reverse={false}>
+        <h3 slot="bnTitle">PANEL ADMINISTRABLE</h3>
+        <p>Usted podrá agregar contenido y editar su página web de manera sencilla sin conocimientos de programación.</p>
+      </ImageBanner>
+      <ImageBanner imageSrc='./panel-administrable-tecnovedadesweb.webp' imgDescription='panel de administracion web' reverse={false}>
+        <h3 slot="bnTitle">HOSTING</h3>
+        <p>Brindamos un espacio de almacenamiento en donde irá alojado el contenido de su página web como textos, imágenes y sus correos.</p>
+      </ImageBanner>
+      <img src="./diseno-responsive-tecnovedadesweb.webp" alt="">
+      <ImageBanner imageSrc='./certificado-ssl-tecnovedadesweb.webp' imgDescription='certificado ssl' reverse={false}>
+        <h3 slot="bnTitle">CERTIFICADO DE SEGURIDAD SSL</h3>
+        <p>Tu página web tendrá un certificado de seguridad SSL para que los datos de su página web viajen de manera encriptada brindándole asi mayor seguridad a tus clientes.</p>
+      </ImageBanner>      
+    </ul>
 	</main>
 	
 </Layout>
@@ -111,40 +152,6 @@ span{
 		background-color: white;
 	}
 }
-button{
-	width: 14rem;
-	font-size: 17px;
-	letter-spacing: 0.2px;
-	font-family: var(--primary-font-condessed);
-	text-align: center;
-	font-weight: 500;
-	font-stretch: 20%;
-	line-height: 1;
-	word-spacing: 0px;
-	padding: 14px 0px;
-	background-color: var(--fg-color-3);
-	border-radius: 10px;
-	color: var(--fg-color-1);
-	border: 0px;	
-	animation: scaleButton ;	
-	animation-duration: 0.8s;	
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-play-state: paused;
-	&:hover{
-		animation-play-state: running;
-		background-color: var(--fg-color-1);
-		color: #0069FF;
-	}
-}
-@keyframes scaleButton{
-	25%{
-		transform: scale(1.1);
-	}
-	75%{
-		transform: scale(0.9);
-	}
-}
 .separator-img{
 	padding: 20px 0px;
 	img{
@@ -152,14 +159,7 @@ button{
 		height: auto;
 	}
 }
-.sub-tittle-container{
-	padding: 50px 0px;
-	& > h3{
-		color: var(--fg-color-1);
-		font-size: var(--size-large);
-	}
-	
-}
+
 .animated-circled-dash{
 	& > svg > path{
 		animation: head-circle-dash;
@@ -197,5 +197,19 @@ button{
 		stroke-dasharray: 1500 1500;
 		opacity: 1;
 	}
+}
+.services-list{
+  background-color: var(--fg-color-1);
+  display:grid;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  grid-template-columns: 1fr 1fr;
+  & > img{
+    grid-row-start: 2 span;
+  }  
+ @media (max-width: 767px){
+  grid-template-columns: 1fr
+  }
 }
 </style>

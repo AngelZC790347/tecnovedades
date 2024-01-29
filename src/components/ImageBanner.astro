@@ -1,25 +1,32 @@
-
+---
+interface Props{
+    imageSrc:string,
+    reverse:boolean,
+    imgDescription:string
+}
+const {imageSrc,reverse,imgDescription} = Astro.props
+const flexDirection = !reverse?"row":"row-reverse"
+---
 <article>
     <header>
-        <img src="https://tecnovedadesweb.com/wp-content/uploads/2022/09/diseno-web-conduce-crecimiento.png" alt="" width="700" height="700">
+        <img src={imageSrc} alt={imgDescription} width="700" height="700">
     </header>
     <main>
-        <h3>DISEÑO WEB PROFESIONAL</h3>
+        <slot name="bnTitle"></slot>
+        <slot name="bnSeparator"></slot>
         <div>
            <slot/>
         </div>        
-        <div><a href="">Conoce nuestros trabajos</a></div>        
-        
+        <div><slot name="bnFooter"></slot></div>                
     </main>    
 </article>
 <style>
     article{    
         width: 100%;        
-        background-color: var(--fg-color-1);
-        display: flex;        
-        justify-content: center;
+        background-color: inherit;
+        display: flex;                
         padding:50px 0px;
-        gap: 3rem;
+        gap: 2rem;        
         header{
             text-align: end;
         }
@@ -27,45 +34,12 @@
             display: flex;
             flex-direction: column;
         }  
-        h3{
-            color: var(--fg-color-3);
-            font-family: var(--secondary-font);
-            font-weight: 900;
-            text-decoration: solid;
-        }
         img{
             width: 100%;
-            height: 100%;
-            height: 400px;
-        }
-        & > *{                        
-            text-wrap: pretty;
-            overflow-x: visible;
-            max-width: 30%;
-        } 
-        p{
-            font-family: arial, helvetica, sans-serif;        
-            font-size: 100%;
-            font-weight: 200;
-            line-height: 1.5em;            
-        }     
-        a{
-            font-family: var(--primary-font);
-            font-size: var(--size-medium);
-            font-weight: 600;
-            line-height: 1;
-            display: block;
-            background-color: #0053E1;
-            color: var(--fg-color-1);
-            border: 0px;
-            border-radius: 0px 25px 25px 0px;
-            padding:12px 24px;
-            width: auto;
-            display: inline-block;
-        }
+            height: auto;            
+        }    
         @media (max-width: 724px) {
-            &>*{
-                height: 400px;
+            &>*{                
                 max-width: 100%;
                 padding: 8px 20px;
             }
