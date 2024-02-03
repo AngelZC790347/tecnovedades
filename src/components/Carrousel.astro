@@ -1,5 +1,5 @@
 ---
-// import Portafolios from "../../data/portafolio.json"
+import Portafolios from "../../public/data/portafolio.json"
 
 ---
 
@@ -7,7 +7,7 @@
     <aside class="carousel">
       <div class="carousel__wrapper">
             
-        <!-- {Portafolios.map((p,index)=><div class="item" id={`slide-${index}`}><img src={"./portafolio/"+p.imageUrl} alt="" width="418" height="418"/></div>)}     -->
+        {Portafolios.map((p,index)=><div class="item" id={`slide-${index}`}><img src={"./portafolio/"+p.imageUrl} alt="" width="418" height="418"/></div>)}    
       </div>
     </aside>
   </div>
