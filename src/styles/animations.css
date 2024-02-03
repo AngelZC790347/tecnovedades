@@ -27,3 +27,67 @@
       transform: scale(0.9);
     }
   }
+  @-webkit-keyframes carousel-animate {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(200%) scale(0.7);
+    }
+    3%, 14.2857142857% {
+      visibility: visible;
+      opacity: 0.8;
+      transform: translateX(100%) scale(0.9);
+    }
+    17.2857142857%, 28.5714285714% {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    31.5714285714%, 42.8571428571% {
+      visibility: visible;
+      opacity: 0.8;
+      transform: translateX(-100%) scale(0.9);
+    }
+    45.8571428571% {
+      visibility: visible;
+      opacity: 0;
+      transform: translateX(-200%) scale(0.9);
+    }
+    100% {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-200%) scale(0.7);
+    }
+  }
+  @keyframes carousel-animate {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(200%) scale(0.7);
+    }
+    3%, 14.2857142857% {
+      visibility: visible;
+      opacity: 0.8;
+      transform: translateX(100%) scale(0.9);
+    }
+    17.2857142857%, 28.5714285714% {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    31.5714285714%, 42.8571428571% {
+      visibility: visible;
+      opacity: 0.8;
+      transform: translateX(-100%) scale(0.9);
+    }
+    45.8571428571% {
+      visibility: visible;
+      opacity: 0;
+      transform: translateX(-200%) scale(0.9);
+    }
+    100% {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-200%) scale(0.7);
+    }
+  }

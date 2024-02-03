@@ -6,6 +6,7 @@ import Divider from "../components/Divider.astro";
 import CenterContainer from "../components/containers/CenterContainer.astro";
 import Card from "../components/Card.astro";
 import CardsData from "../../data/cards.json";
+import Carrousel from "../components/Carrousel.astro";
 ---
 
 <Layout
@@ -208,7 +209,7 @@ import CardsData from "../../data/cards.json";
         {CardsData.map(card=><Card description={card.description} imageUrl={card.imageUrl} title={card.tiltle}></Card>)}
       </ul>    
       <CenterContainer>
-        <ImageBanner imageSrc="../../public/img-fondo-despega-tu-negocio-tecnovedadesweb.png" imgDescription="tecnovedades impulsamos tu negocio " reverse={false}>
+        <ImageBanner imageSrc="./img-fondo-despega-tu-negocio-tecnovedadesweb.png" imgDescription="tecnovedades impulsamos tu negocio " reverse={false}>
           <h3 slot="bnTitle">HAZ DESPEGAR TU NEGOCIO</h3>
           <div>
             <p>En Tecnovedades Web colocamos tu negocio en el mundo digital. Conoce los beneficios que obtendrás:</p>
@@ -222,7 +223,11 @@ import CardsData from "../../data/cards.json";
         </ImageBanner>
       </CenterContainer>        
     </div>
-    <Divider>NUESTROS TRABAJOS  <div><span> NUESTRA MEJOR CARTA DE PRESENTACIÓN</span></div></Divider>        
+    <Divider>NUESTROS TRABAJOS  <div><span> NUESTRA MEJOR CARTA DE PRESENTACIÓN</span></div></Divider>    
+    <div class="carrousel-container">
+      <Carrousel></Carrousel>  
+      <PrimaryButton>Ver mas trabajos</PrimaryButton> 
+    </div> 
   </main>
 </Layout>
 <script>
@@ -368,5 +373,11 @@ import CardsData from "../../data/cards.json";
     gap: 2.5em;
     width: 60%;
     margin: 0 auto;
+  }
+  .carrousel-container{    
+    width: 100%;
+    background-color: var(--fg-color-1);
+    text-align: center;
+    padding: 30px 0px;
   }
 </style>

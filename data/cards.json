@@ -1,52 +1,52 @@
 [
     {
         "tiltle":"informativa",
-        "imageUrl":"../public/sitio-web-2.webp",
+        "imageUrl":"./sitio-web-2.webp",
         "description":""
     },
     {
         "tiltle":"Tienda Virtual",
-        "imageUrl":"../public/mercado-3-2.webp",
+        "imageUrl":"./mercado-3-2.webp",
         "description":""
     },
     {
         "tiltle":"Educativa",
-        "imageUrl":"../public/elearning-2.webp",
+        "imageUrl":"./elearning-2.webp",
         "description":""
     },
     {
         "tiltle":"Restaurant",
-        "imageUrl":"../public/online-order.webp",
+        "imageUrl":"./online-order.webp",
         "description":""
     },
     {
         "tiltle":"Agencia de Viajes y Turismo",
-        "imageUrl":"../public/visa-1.webp",
+        "imageUrl":"./visa-1.webp",
         "description":""
     },
     {
         "tiltle":"Inmobibliaria",
-        "imageUrl":"../public/property-2.webp",
+        "imageUrl":"./property-2.webp",
         "description":""
     },
     {
         "tiltle":"Hotel",
-        "imageUrl":"../public/hotel-1.webp",
+        "imageUrl":"./hotel-1.webp",
         "description":""
     },
     {
         "tiltle":"Red de Meracero",
-        "imageUrl":"../public/social-network-2.webp",
+        "imageUrl":"./social-network-2.webp",
         "description":""
     },
     {
         "tiltle":"Landing Page",
-        "imageUrl":"../public/website-1-3.webp",
+        "imageUrl":"./website-1-3.webp",
         "description":""
     },
     {
         "tiltle":"y Mucho Mas ..",
-        "imageUrl":"../public/social-media-2.webp",
+        "imageUrl":"./social-media-2.webp",
         "description":""
     }
 
