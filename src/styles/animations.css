@@ -1,0 +1,29 @@
+@keyframes hide-highlight {
+    0% {
+      opacity: 1;
+      stroke-dasharray: 1500 1500;
+    }
+
+    to {
+      opacity: 0;
+      filter: blur(10px);
+    }
+  }
+  @keyframes head-circle-dash {
+    0% {
+      stroke-dasharray: 0 1500;
+      opacity: 1;
+    }
+    100% {
+      stroke-dasharray: 1500 1500;
+      opacity: 1;
+    }
+  }
+  @keyframes scaleButton {
+    25% {
+      transform: scale(1.1);
+    }
+    75% {
+      transform: scale(0.9);
+    }
+  }

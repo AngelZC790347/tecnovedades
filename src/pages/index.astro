@@ -1,215 +1,372 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ImageBanner from '../components/ImageBanner.astro';
-import PrimaryButton from '../components/Buttons/PrimaryButton.astro';
-import Divider from '../components/Divider.astro'
+import Layout from "../layouts/Layout.astro";
+import ImageBanner from "../components/ImageBanner.astro";
+import PrimaryButton from "../components/Buttons/PrimaryButton.astro";
+import Divider from "../components/Divider.astro";
+import CenterContainer from "../components/containers/CenterContainer.astro";
+import Card from "../components/Card.astro";
+import CardsData from "../../data/cards.json";
 ---
 
-<Layout title="Welcome to Astro." backgoundImg="./paginas-web-en-lima-tecnovedades.webp">		
-	<main>
-		<section>
-			<h1>Ponemos tu negocio en Internet</h1>
-			<h3>
-				<span>EN TAN SOLO </span>
-				<span id="circle-animated">
-					7 DIAS
-					<svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none"><path  class="animated-circled-dash" id="circle-animated" d="M325,18C228.7-8.3,118.5,8.3,78,21C22.4,38.4,4.6,54.6,5.6,77.6c1.4,32.4,52.2,54,142.6,63.7 c66.2,7.1,212.2,7.5,273.5-8.3c64.4-16.6,104.3-57.6,33.8-98.2C386.7-4.9,179.4-1.4,126.3,20.7"></path></svg>
-				</span>	
-			</h3>
-			<div class="divider"><span></span></div>
-			<div><PrimaryButton><a href="">Comunicate con un asesor</a></PrimaryButton></div>			
-		</section>
-		<ImageBanner imageSrc='./diseno-web-conduce-crecimiento.webp' imgDescription='Haz crecer tu negocio' reverse={false}>
-      <h3 slot="bnTitle">DISEÑO WEB PROFESIONAL</h3>
-			<div slot="bnSeparator" class="separator-img"><img src="https://tecnovedadesweb.com/wp-content/uploads/2022/09/linea.png"  width="290" height="58" alt=""></div>
-			<div>
-				<p>Entendemos que la motivación principal de nuestros clientes es VENDER, por ello vamos directo al grano y te ayudamos a destacar ante tu competencia mediante una </p>
-            	<p style="font-weight:bold">Página web profesional.</p>
-            	<p>Que te permitirá mostrar tus productos y servicios de manera eficaz, manejar ofertas y promociones, y lograr que tus clientes compren de manera sencilla a través de los diferentes medios de pago o ponerse en contacto contigo para poder requerir tus servicios de manera efectiva.</p>
-			</div>
-      <PrimaryButton slot='bnFooter'>Conoce nuestros trabajos aqui</PrimaryButton>
-		</ImageBanner>
-		<Divider>¿Porque Elegirnos?</Divider>
-		<ImageBanner  imageSrc='./Ponemos-Tu-negocio-en-Google.webp' imgDescription='Tu negocio en interner en 5 dias' reverse>			
-			<div>
-				<p>No solo nos limitamos a desarrollar tu página web, te brindamos asesoría para que puedas obtener nuevos clientes.</p>
-        <ul>
-          <li>Colocamos tu negocio en Google</li>
-          <li>Tus números de contacto y correo serán visibles</li>
-          <li>Se mostrará una ficha con la información de tu negocio</li>
-          <li>Aparecerá el mapa para que puedan encontrar facilmente</li>          
-        </ul>
-			</div>
-      <div><img src="./logo-Google.webp" alt="Logo google"></div>
-		</ImageBanner>
-    <ImageBanner imageSrc='./213dasdgdasfdasd.webp' imgDescription='Tecnovedades Agencia de Paginas web' reverse={false}>
-      <h3 slot="bnTitle">ACERCA DE NOSOTROS</h3>
+<Layout
+  title="Welcome to Astro."
+  backgoundImg="./paginas-web-en-lima-tecnovedades.webp"
+>
+  <main>
+    <section>
+      <h1>Ponemos tu negocio en Internet</h1>
+      <h3>
+        <span>EN TAN SOLO</span>
+        <span id="circle-animated">
+          7 DIAS
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 500 150"
+            preserveAspectRatio="none"
+            ><path
+              class="animated-circled-dash"
+              id="circle-animated"
+              d="M325,18C228.7-8.3,118.5,8.3,78,21C22.4,38.4,4.6,54.6,5.6,77.6c1.4,32.4,52.2,54,142.6,63.7 c66.2,7.1,212.2,7.5,273.5-8.3c64.4-16.6,104.3-57.6,33.8-98.2C386.7-4.9,179.4-1.4,126.3,20.7"
+            ></path></svg
+          >
+        </span>
+      </h3>
+      <div class="divider"><span></span></div>
       <div>
-        <p>En Tecnovedades Web nos dedicamos al <strong>diseño de páginas web en Lima, Perú.</strong></p>
-        <p><strong>¡Amamos lo que hacemos!</strong> Te ayudaremos a que puedas insertarte en el mundo digital para poder promocionar de manera eficaz tus productos y servicios, llegando a nuevos clientes potenciales, aumentando de esta manera tus ventas y tu visibilidad en el mercado.</p>
-        <PrimaryButton slot='bnFooter'>Conoce mas de nosotros</PrimaryButton>
+        <PrimaryButton><a href="">Comunicate con un asesor</a></PrimaryButton>
       </div>
-    </ImageBanner>
-    <Divider>¿QUE INCLUYEN NUESTROS TRABAJOS?</Divider>			
-    <ul class="services-list">
-      <ImageBanner imageSrc='./responsive-diseno-web-tecnovedadesweb-1-1.webp' imgDescription='diseno responsivo' reverse={false}>
-        <h3 slot="bnTitle">DISEÑO RESPONSIVE</h3>
-        <p>Su página web se adaptará a los diferentes dispositivos como tablets, celulares, laptops y computadoras y se seguirá viendo de manera óptima.</p>
+    </section>
+    <CenterContainer>
+      <ImageBanner
+        imageSrc="./diseno-web-conduce-crecimiento.webp"
+        imgDescription="Haz crecer tu negocio"
+        reverse={false}
+      >
+        <h3 slot="bnTitle">DISEÑO WEB PROFESIONAL</h3>
+        <div slot="bnSeparator" class="separator-img">
+          <img
+            src="https://tecnovedadesweb.com/wp-content/uploads/2022/09/linea.png"
+            width="290"
+            height="58"
+            alt=""
+          />
+        </div>
+        <div>
+          <p>
+            Entendemos que la motivación principal de nuestros clientes es
+            VENDER, por ello vamos directo al grano y te ayudamos a destacar
+            ante tu competencia mediante una
+          </p>
+          <p style="font-weight:bold">Página web profesional.</p>
+          <p>
+            Que te permitirá mostrar tus productos y servicios de manera eficaz,
+            manejar ofertas y promociones, y lograr que tus clientes compren de
+            manera sencilla a través de los diferentes medios de pago o ponerse
+            en contacto contigo para poder requerir tus servicios de manera
+            efectiva.
+          </p>
+        </div>
+        <PrimaryButton slot="bnFooter">
+          Conoce nuestros trabajos aqui
+        </PrimaryButton>
       </ImageBanner>
-      <ImageBanner imageSrc='./panel-administrable-tecnovedadesweb.webp' imgDescription='panel de administracion de paginas web' reverse={false}>
-        <h3 slot="bnTitle">DOMINIO</h3>
-        <p>Te brindamos una dirección web (.com) para que visiten tu página desde cualquier navegador, por ejemplo: minegocio.com </p>
+    </CenterContainer>
+    <Divider>¿Porque Elegirnos?</Divider>
+    <CenterContainer>
+      <ImageBanner
+        imageSrc="./Ponemos-Tu-negocio-en-Google.webp"
+        imgDescription="Tu negocio en interner en 5 dias"
+        reverse
+      >
+        <div>
+          <p>
+            No solo nos limitamos a desarrollar tu página web, te brindamos
+            asesoría para que puedas obtener nuevos clientes.
+          </p>
+          <ul>
+            <li>Colocamos tu negocio en Google</li>
+            <li>Tus números de contacto y correo serán visibles</li>
+            <li>Se mostrará una ficha con la información de tu negocio</li>
+            <li>Aparecerá el mapa para que puedan encontrar facilmente</li>
+          </ul>
+        </div>
+      <div  class="google-container" slot="bnFooter"><img src="./logo-Google.webp" alt="Logo google" /></div>
       </ImageBanner>
-      <ImageBanner imageSrc='./correo-corporativo-tecnovedadesweb.webp' imgDescription='correo corporativo' reverse={false}>
-        <h3 slot="bnTitle">CORREO CORPORATIVO</h3>
-        <p>Cuentas corporativas gratuitas con su propio nombre de dominio, olvídese de responder a sus clientes y proveedores desde una cuenta de Hotmail o Gmail, ahora lo podrá hacer de manera más profesional, por ejemplo contacto@minegocio.com </p>
+    </CenterContainer>
+    <CenterContainer>
+      <ImageBanner
+        imageSrc="./213dasdgdasfdasd.webp"
+        imgDescription="Tecnovedades Agencia de Paginas web"
+        reverse={false}
+      >
+        <h3 slot="bnTitle">ACERCA DE NOSOTROS</h3>
+        <div>
+          <p>
+            En Tecnovedades Web nos dedicamos al <strong
+              >diseño de páginas web en Lima, Perú.</strong
+            >
+          </p>
+          <p>
+            <strong>¡Amamos lo que hacemos!</strong> Te ayudaremos a que puedas insertarte
+            en el mundo digital para poder promocionar de manera eficaz tus productos
+            y servicios, llegando a nuevos clientes potenciales, aumentando de esta
+            manera tus ventas y tu visibilidad en el mercado.
+          </p>
+          
+        </div>
+        <PrimaryButton slot="bnFooter">Conoce mas de nosotros</PrimaryButton>
       </ImageBanner>
-      <ImageBanner imageSrc='./responsive-diseno-web-tecnovedadesweb-1-1.webp' imgDescription='responsiuve diseno' reverse={false}>
-        <h3 slot="bnTitle">PANEL ADMINISTRABLE</h3>
-        <p>Usted podrá agregar contenido y editar su página web de manera sencilla sin conocimientos de programación.</p>
-      </ImageBanner>
-      <ImageBanner imageSrc='./panel-administrable-tecnovedadesweb.webp' imgDescription='panel de administracion web' reverse={false}>
-        <h3 slot="bnTitle">HOSTING</h3>
-        <p>Brindamos un espacio de almacenamiento en donde irá alojado el contenido de su página web como textos, imágenes y sus correos.</p>
-      </ImageBanner>
-      <img src="./diseno-responsive-tecnovedadesweb.webp" alt="">
-      <ImageBanner imageSrc='./certificado-ssl-tecnovedadesweb.webp' imgDescription='certificado ssl' reverse={false}>
-        <h3 slot="bnTitle">CERTIFICADO DE SEGURIDAD SSL</h3>
-        <p>Tu página web tendrá un certificado de seguridad SSL para que los datos de su página web viajen de manera encriptada brindándole asi mayor seguridad a tus clientes.</p>
-      </ImageBanner>      
-    </ul>
-	</main>
-	
+    </CenterContainer>
+    <Divider>¿QUE INCLUYEN NUESTROS TRABAJOS?</Divider>
+    <div class="services-list-container">
+      <ul class="services-list">
+        <ImageBanner
+          imageSrc="./responsive-diseno-web-tecnovedadesweb-1-1.webp"
+          imgDescription="diseno responsivo"
+          reverse={false}
+        >
+          <h3 slot="bnTitle">DISEÑO RESPONSIVE</h3>
+          <p>
+            Su página web se adaptará a los diferentes dispositivos como tablets,
+            celulares, laptops y computadoras y se seguirá viendo de manera
+            óptima.
+          </p>
+        </ImageBanner>
+        <ImageBanner
+          imageSrc="./panel-administrable-tecnovedadesweb.webp"
+          imgDescription="panel de administracion de paginas web"
+          reverse={false}
+        >
+          <h3 slot="bnTitle">DOMINIO</h3>
+          <p>
+            Te brindamos una dirección web (.com) para que visiten tu página desde
+            cualquier navegador, por ejemplo: minegocio.com
+          </p>
+        </ImageBanner>
+        <ImageBanner
+          imageSrc="./correo-corporativo-tecnovedadesweb.webp"
+          imgDescription="correo corporativo"
+          reverse={false}
+        >
+          <h3 slot="bnTitle">CORREO CORPORATIVO</h3>
+          <p>
+            Cuentas corporativas gratuitas con su propio nombre de dominio,
+            olvídese de responder a sus clientes y proveedores desde una cuenta de
+            Hotmail o Gmail, ahora lo podrá hacer de manera más profesional, por
+            ejemplo contacto@minegocio.com
+          </p>
+        </ImageBanner>
+        <ImageBanner
+          imageSrc="./responsive-diseno-web-tecnovedadesweb-1-1.webp"
+          imgDescription="responsiuve diseno"
+          reverse={false}
+        >
+          <h3 slot="bnTitle">PANEL ADMINISTRABLE</h3>
+          <p>
+            Usted podrá agregar contenido y editar su página web de manera
+            sencilla sin conocimientos de programación.
+          </p>
+        </ImageBanner>
+        <ImageBanner
+          imageSrc="./panel-administrable-tecnovedadesweb.webp"
+          imgDescription="panel de administracion web"
+          reverse={false}
+        >
+          <h3 slot="bnTitle">HOSTING</h3>
+          <p>
+            Brindamos un espacio de almacenamiento en donde irá alojado el
+            contenido de su página web como textos, imágenes y sus correos.
+          </p>
+        </ImageBanner>
+        <img src="./diseno-responsive-tecnovedadesweb.webp" alt="" />
+        <ImageBanner
+          imageSrc="./certificado-ssl-tecnovedadesweb.webp"
+          imgDescription="certificado ssl"
+          reverse={false}
+        >
+          <h3 slot="bnTitle">CERTIFICADO DE SEGURIDAD SSL</h3>
+          <p>
+            Tu página web tendrá un certificado de seguridad SSL para que los
+            datos de su página web viajen de manera encriptada brindándole asi
+            mayor seguridad a tus clientes.
+          </p>
+        </ImageBanner>
+      </ul>
+      <div> 
+        <h3>ELIGE EL MODELO DE PÁGINA WEB QUE NECESITAS</h3>
+        <h4>Y LLEVA TU NEGOCIO A OTRO NIVEL</h4>
+        <div slot="bnSeparator" class="separator-img">
+          <img
+            src="https://tecnovedadesweb.com/wp-content/uploads/2022/09/linea.png"
+            width="290"
+            height="58"
+            alt=""
+          />
+        </div>
+      </div>
+      <ul class="cards-container">
+        {CardsData.map(card=><Card description={card.description} imageUrl={card.imageUrl} title={card.tiltle}></Card>)}
+      </ul>    
+      <CenterContainer>
+        <ImageBanner imageSrc="../../public/img-fondo-despega-tu-negocio-tecnovedadesweb.png" imgDescription="tecnovedades impulsamos tu negocio " reverse={false}>
+          <h3 slot="bnTitle">HAZ DESPEGAR TU NEGOCIO</h3>
+          <div>
+            <p>En Tecnovedades Web colocamos tu negocio en el mundo digital. Conoce los beneficios que obtendrás:</p>
+            <ul>
+              <li>Obten mayor alcanze</li>
+              <li>Incrementa tus ventas</li>
+              <li>Llega a nuevos clientes</li>
+            </ul>
+          </div>
+          <PrimaryButton>Comunicate con un asesor</PrimaryButton>
+        </ImageBanner>
+      </CenterContainer>        
+    </div>
+    <Divider>NUESTROS TRABAJOS  <div><span> NUESTRA MEJOR CARTA DE PRESENTACIÓN</span></div></Divider>        
+  </main>
 </Layout>
 <script>
-	let el = document.querySelector("#circle-animated");
-	setInterval(()=>{
-		if(el){
-			if(el.className === "animated-circled-dash")
-				el.className =  "animated-circled-hide"
-			else
-				el.className = "animated-circled-dash"
-		}	
-	},4000);
+  let el = document.querySelector("#circle-animated");
+  setInterval(() => {
+    if (el) {
+      if (el.className === "animated-circled-dash")
+        el.className = "animated-circled-hide";
+      else el.className = "animated-circled-dash";
+    }
+  }, 4000);
 </script>
-<style>	
-main{	
-	display: flex;	
-	justify-content: center;
-	flex-direction: column;	
-	align-items: center;
-	section{
-		width: 70%;
-		height: 750px;
-		display: flex;
-		flex-direction: column;		
-		justify-content: center;
-		text-align: center;
-		h1{
-			color: var(--fg-color-1);			
-		}
-	}
-}
-h3{	
-	letter-spacing: -0.5px;
-	text-transform: uppercase;	
-	margin: 20px auto;	
-	& > h1{
-		color: var(--fg-color-1);		
-	}
-}
-span{
-	font-size: inherit;
-	color: yellow;
-	position: relative;
-	& > svg{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: calc(100% + 20px);
-		height: calc(100% + 20px);
-		transform: translate(-50%,-50%);
-		font-weight: bold;
-		font-size: 40px;
-	}
-}
-#circle-animated{
-	fill: none;
-	stroke: #FF5A00;
-	
-	font-weight: 600;
-	stroke-width: 9px;
-}
-.divider{
-	display: flex;
-	justify-content: center;
-	height: 3px;
-	margin-bottom: 20px;		
-	padding: 20px;
-	& > span{			
-		height: 100%;
-		width: 3rem;
-		background-color: white;
-	}
-}
-.separator-img{
-	padding: 20px 0px;
-	img{
-		width: 28%;
-		height: auto;
-	}
-}
-
-.animated-circled-dash{
-	& > svg > path{
-		animation: head-circle-dash;
-		animation-duration: 1.2s;
-		animation-iteration-count: 1;
-	}
-	
-}
-.animated-circled-hide{
-	& > svg > path{
-		opacity: 1;
-		stroke-dasharray: 1500 1500;	
-		animation: hide-highlight .4s forwards;
-		animation-iteration-count: 1;
-	}
-
-}
-@keyframes hide-highlight {
-    0% {
-        opacity: 1;
-        stroke-dasharray: 1500 1500
+<style>
+  main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    section {
+      width: 70%;
+      height: 750px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      h3 {
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+        margin: 20px auto;
+        & > h1 {
+          color: var(--fg-color-1);
+        }
+      }
+      h1 {
+        color: var(--fg-color-1);
+      }
     }
-
-    to {
-        opacity: 0;
-        filter: blur(10px)
-    }
-}
-@keyframes head-circle-dash{
-	0%{
-		stroke-dasharray: 0 1500;
-		opacity: 1;		
-	}
-	100%{
-		stroke-dasharray: 1500 1500;
-		opacity: 1;
-	}
-}
-.services-list{
-  background-color: var(--fg-color-1);
-  display:grid;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  grid-template-columns: 1fr 1fr;
-  & > img{
-    grid-row-start: 2 span;
-  }  
- @media (max-width: 767px){
-  grid-template-columns: 1fr
   }
-}
+
+  span {
+    font-size: inherit;
+    color: yellow;
+    position: relative;
+    & > svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      font-size: 40px;
+    }
+  }
+  #circle-animated {
+    fill: none;
+    stroke: #ff5a00;
+
+    font-weight: 600;
+    stroke-width: 9px;
+  }
+  .divider {
+    display: flex;
+    justify-content: center;
+    height: 3px;
+    margin-bottom: 20px;
+    padding: 20px;
+    & > span {
+      height: 100%;
+      width: 3rem;
+      background-color: white;
+    }
+  }
+  .separator-img {    
+    img {
+      width: 18%;
+      height: auto;
+    }
+  }
+
+  .animated-circled-dash {
+    & > svg > path {
+      animation: head-circle-dash;
+      animation-duration: 1.2s;
+      animation-iteration-count: 1;
+    }
+  }
+  .animated-circled-hide {
+    & > svg > path {
+      opacity: 1;
+      stroke-dasharray: 1500 1500;
+      animation: hide-highlight 0.4s forwards;
+      animation-iteration-count: 1;
+    }
+  }
+ 
+  .services-list-container{
+    background-color: var(--fg-color-1);
+    width: 100%;
+    text-align: center;
+  } 
+  .services-list { 
+    width: 1140px;    
+    margin: 0 auto;
+    display: grid;     
+    grid-template-columns: 1fr 1fr;    
+    header{
+        width: 20%;
+        img{
+          width: 100%;
+        }
+    }
+    main{
+      width: 80%;
+      font-family: var(--primary-font);
+      h3{
+        font-size: var(--size-large);
+        color: var(--bg-color-1);
+      }
+    }
+    p{
+      overflow-y: hidden;
+    }
+    
+    & > img {
+      grid-row-start: 2 span;
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .google-container{
+    height: 20%;
+    text-align: end;
+    img{
+      width:18%;
+      height: auto;
+    }
+  }
+  .cards-container{
+    display: grid;    
+    grid-template-columns: repeat(5,1fr);    
+    gap: 2.5em;
+    width: 60%;
+    margin: 0 auto;
+  }
 </style>

@@ -1,13 +1,18 @@
 <div class="sub-tittle-container">
-    <h3><slot></slot></h3>
+    <h3><slot></slot></h3>    
+    <slot name="second"></slot>
 </div>
 
 <style>
   .sub-tittle-container {
     padding: 50px 0px;
-    & > h3 {
-      color: var(--fg-color-1);
+    text-align: center;
+    color: var(--fg-color-1);
+    & > h3 {      
       font-size: var(--size-large);
+    }    
+    *{
+      color: inherit;      
     }
   }
 </style>

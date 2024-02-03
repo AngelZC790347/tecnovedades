@@ -1,0 +1,38 @@
+<div class="center-layout">
+    <slot/>
+</div>
+<style>
+.center-layout{
+    background-color: var(--fg-color-1);
+    width:100%;      
+    article{        
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        header{
+            width: 39.196%;
+        }
+        main{
+            gap:2em;
+            width: 60.804%;
+            h3{
+                font-family: var(--seconday-font);
+            }
+           font-family: var(--primary-font); 
+           line-height: 1.7em;
+           h3{
+            font-size:var(--size-large);
+            color: var(--fg-color-3);
+            font-weight: 600;
+           }                    
+        }
+        @media (max-width: 724px) {
+                main{
+                    width: 100%;
+                }                
+                padding: 15px;      
+           }  
+    }                   
+}
+
+</style>

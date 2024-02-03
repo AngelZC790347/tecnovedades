@@ -5,6 +5,7 @@ interface Props {
 }
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/animations.css'
 const { title,backgoundImg} = Astro.props;
 const bgUrl = `url(${backgoundImg})`;
 ---
@@ -50,7 +51,7 @@ const bgUrl = `url(${backgoundImg})`;
 	--size-title:100px;
 	--size-small:14px;
 	--size-medium:16px;
-	--size-large:40px;
+	--size-large:36px;
 	--size-xl:49px;
 	--primary-font:"Roboto", Sans-serif;
 	--primary-font-condessed:"Roboto Condensed", Sans-serif;
@@ -58,6 +59,9 @@ const bgUrl = `url(${backgoundImg})`;
 	}
 	a{
 		align-self: center;
+	}
+	p{
+		margin: 0.5em;
 	}
 	html {
 		font-family: var(--seconday-font);
