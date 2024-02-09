@@ -1,6 +1,94 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PrimaryButton from "../components/Buttons/PrimaryButton.astro";
+import Portfolios from '../../public/data/portafolio.json'
 ---
-<Layout title="Portafolio de Tecnovedades Web" backgoundImg="/How_to_unblock_website_with_a_VPN-Hero-1.webp">
 
+<Layout
+  title="Portafolio de Tecnovedades Web"
+  backgoundImg="/How_to_unblock_website_with_a_VPN-Hero-1.webp"
+>
+  <header>
+    <div>
+        <h1>NUESTROS TRABAJOS</h1>
+        <h2>Nuesta mejor carta de presentacion</h2>
+        <PrimaryButton>Comunicate con un asesor</PrimaryButton>                
+    </div>    
+  </header>
+  <main>
+    <div class="ul-container">    
+      <ul>
+          {Portfolios.map((p,index)=><div class="item" id={`slide-${index}`}><div class="hover-back"></div><img src={"./portafolio/"+p.imageUrl} alt="" width="418" height="418"/></div>)}
+      </ul>
+  </div>
+  </main>
 </Layout>
+<style>
+  header {    
+    height: 450px;
+    display: ;    
+    div{
+        /* gap: 1.5em; */
+        color: var(--fg-color-1);
+        text-align: center;
+        display: grid;
+        place-content: center;
+        height: 100%;
+    }
+    /* background-color: var(--fg-color-1); */
+  }
+  main{    
+    background-color: var(--fg-color-1);
+    padding: 50px 0px;
+    width: 100dvw;
+    ul{        
+        display: grid;
+        /* width: 45%; */
+        margin: 0 auto;      
+        text-align: center;
+        /* width: 100%; */
+        padding: 0;        
+        grid-template-columns:repeat( auto-fill, minmax(300px, 1fr));
+        gap: 1.8em; 
+        .item{
+            /* object-fit: cover; */
+            /* width: 20px; */
+            position: relative;
+            .hover-back{
+                position: absolute;
+                top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: var(--fg-color-3);
+                opacity: 0;
+                z-index: 1;
+                transition:all 0.3s ease-out 0.1s;
+            }
+            &:hover{                
+                .hover-back{
+                    opacity: 1;
+                }
+                
+            }
+        }
+        img{
+            width: 100%;
+            display: block;
+            /* object-fit: contain;       */
+            height: auto;      
+        }
+        
+    }        
+  }
+  .ul-container{
+    width: 50%;
+    margin: 0 auto;
+    @media (max-width: 724px){
+          width: 100%;
+          .item{
+            padding: 20px;
+          } 
+    }
+  }
+</style>

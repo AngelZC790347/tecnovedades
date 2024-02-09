@@ -21,15 +21,13 @@ const flexDirection = !reverse?"row":"row-reverse"
     </main>    
 </article>
 <style define:vars={{flexDirection}}>
-    article{           
-        width: 100%;        
+    article{                       
         background-color: inherit;
         display: flex;        
         flex-direction: var(--flexDirection);     
         padding:50px 0px;
         gap: 3rem;                
-        header{
-            /* width: 0%; */
+        header{            
             text-align: end;            
         }
         main{
