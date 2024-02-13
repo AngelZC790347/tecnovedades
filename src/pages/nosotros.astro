@@ -1,6 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import CenterContainer from "../components/containers/CenterContainer.astro"
+import ImageBanner from "../components/ImageBanner.astro"
 ---
 <Layout title="Agencia Digital Tecnovedades Web" backgoundImg="/disenador-web-tecnovedades.jpg">
-
+    <header>
+        <div>
+            <h1>Acerca de Nosostros</h1>            
+        </div>    
+    </header>
+    <main>
+        <CenterContainer>
+            <ImageBanner imageSrc="./213dasdgdasfdasd.webp" reverse imgDescription="Tecnovedades web - Agencia Tecnologica">
+                <div>
+                    <p>En Tecnovedades Web nos dedicamos al <strong> diseño de páginas web en Lima, Perú.</strong></p>
+                    <p><strong>¡Amamos lo que hacemos!</strong> Te ayudaremos a que puedas insertarte en el mundo digital para poder promocionar de manera eficaz tus productos y servicios, llegando a nuevos clientes potenciales, aumentando de esta manera tus ventas y tu visibilidad en el mercado</p>
+                    <p>A lo largo de 8 años de experiencia hemos realizado trabajos de diseño web, marketing digital, alojamiento web, mantenimiento web, redes sociales y diseño gráfico en general en Perú. Además de Perú, trabajamos de forma remota para clientes de otros países como Estados Unidos, Guatemala, Honduras, México y otros</p>
+                </div>
+            </ImageBanner>
+        </CenterContainer>
+    </main>
 </Layout>
+<style>
+    strong{
+        font-weight: bold !important;
+        text-decoration: underline;
+    }
+     header {    
+    height: 450px;
+    display: ;    
+    
+    div{
+        /* gap: 1.5em; */
+        color: var(--fg-color-1);
+        text-align: center;
+        display: grid;
+        place-content: center;
+        height: 100%;
+    }
+    /* background-color: var(--fg-color-1); */
+  }
+  main{
+    background-color: var(--fg-color-1);
+  }
+</style>
