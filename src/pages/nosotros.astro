@@ -19,7 +19,38 @@ import ImageBanner from "../components/ImageBanner.astro"
                 </div>
             </ImageBanner>
         </CenterContainer>
+        <CenterContainer>
+        <h2><i aria-hidden="true" class="far fa-heart" style={{padding:"0px 12px"}}></i> Nuestros Valores</h2>
+        <ul>            
+            <li>
+                <div><span><i aria-hidden="true" class="fas fa-check-circle"></i></span></div>
+                <h6>Responsabilidad</h6>
+                <p>Cumplimos con lo que ofrecemos de manera transparente, de esta manera logramos que nuestros clientes nos recomienden.</p>
+            </li>
+            <li>
+                <div><span><i aria-hidden="true" class="fas fa-clock"></i></span></div>
+                <h6>Puntualidad</h6>
+                <p>Sabemos que el tiempo vale mas que el dinero, por ello cumplimos con las fechas ofrecidas y en lo posible procuramos entregar nuestros proyectos antes de tiempo</p>
+            </li>
+            <li>
+                <div><span><i aria-hidden="true" class="fas fa-hands"></i></span></div>
+                <h6>dedicacion</h6>
+                <p>Nos tomamos nuestro trabajo enserio y tratamos cada proyecto de manera personalizada poniendo especial atención en cada detalle</p>
+            </li>
+            <li>
+                <div><span><i aria-hidden="true" class="fas fa-magic"></i></span></div>
+                <h6>creatividad</h6>
+                <p>Nos tomamos nuestro trabajo enserio y tratamos cada proyecto de manera personalizada poniendo especial atención en cada detalle.</p>
+            </li>
+            <li>
+                <div><span><i aria-hidden="true" class="fas fa-heart"></i></span></div>
+                <h6>Pasion</h6>
+                <p>Amamos lo que hacemos, por ello buscamos nuevas tecnologías y nuevas herramientas que nos permitan brindar herramientas útiles y llamativas.</p>
+            </li>
+        </ul>    
+    </CenterContainer>
     </main>
+    
 </Layout>
 <style>
     strong{
@@ -42,5 +73,59 @@ import ImageBanner from "../components/ImageBanner.astro"
   }
   main{
     background-color: var(--fg-color-1);
+    h2,h6{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    h2{
+        margin-top: 50px;
+        color: var(--fg-color-3);
+        text-transform: uppercase;
+        font-family: var(--secondary-font);
+        font-weight: 700;
+        i{
+            transform: translateY(-2px);
+            font-size: var(--size-large);
+        }
+    }
+    h6{
+        font-family: var(--primary-font-bold);
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: calc(var(--size-medium) + 3px);
+    }
+    ul{        
+        list-style: none;
+        margin: 0 auto;
+        padding-bottom: 60px;
+        margin-top: 20px;
+        display: flex;
+        gap: 0.2em;
+        max-width: 1100px;
+        justify-content: center;
+        & li{
+            display: flex;
+            flex-direction: column;            
+            p{
+                text-align: center;
+                font-family: var(--primary-font);
+                font-weight: 200;
+                font-size: var(--size-small);
+                line-height: 2;
+            }
+            span{
+                padding: 16px 0px;
+                display: block;
+                text-align: center;
+                width: 100%;
+                i{
+                    font-size: 2.5rem;
+                    color: #0096FF;
+                }
+            }
+        }
+
+    }
   }
 </style>

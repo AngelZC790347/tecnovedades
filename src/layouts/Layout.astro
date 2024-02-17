@@ -15,13 +15,14 @@ const bgUrl = `url(${backgoundImg})`;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />		
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />				
 		<meta name="generator" content={Astro.generator} />
+		<script src="https://kit.fontawesome.com/0231b09d42.js" crossorigin="anonymous"></script>
 		<title>{title}</title>
 	</head>
 	<body>
 		<!-- BackGround Image -->
-		<div class="absoluteBg"></div>		
+		<div class="absoluteBg"></div>				
 		<Header/>
 		<slot />
 		<Footer/>
@@ -36,6 +37,10 @@ const bgUrl = `url(${backgoundImg})`;
 	@font-face {
 		font-family: "Roboto";
 		src: url("/fonts/Roboto/Roboto-Light.ttf");
+	}
+	@font-face {
+		font-family: "Roboto Bold";
+		src: url("/fonts/Roboto/Roboto-Medium.ttf");
 	}
 	@font-face{
 		font-family: "Antonio";
@@ -54,6 +59,7 @@ const bgUrl = `url(${backgoundImg})`;
 	--size-large:36px;
 	--size-xl:49px;
 	--primary-font:"Roboto", Sans-serif;
+	--primary-font-bold:"Roboto Bold", Sans-serif;
 	--primary-font-condessed:"Roboto Condensed", Sans-serif;
 	--seconday-font:"Antonio", Sans-serif;
 	}
