@@ -2,14 +2,15 @@
 interface Props{
     imageSrc:string,
     reverse:boolean,
-    imgDescription:string
+    imgDescription:string,
+    imageClass?:string 
 }
-const {imageSrc,reverse,imgDescription} = Astro.props
+const {imageSrc,reverse,imgDescription,imageClass =""} = Astro.props
 const flexDirection = !reverse?"row":"row-reverse"
 ---
 <article>
     <header>
-        <img src={imageSrc} alt={imgDescription} width="700" height="700">
+        <img class={imageClass} src={imageSrc} alt={imgDescription} width="700" height="700">
     </header>
     <main>
         <slot name="bnTitle"></slot>

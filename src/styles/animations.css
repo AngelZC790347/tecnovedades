@@ -91,3 +91,46 @@
       transform: translateX(-200%) scale(0.7);
     }
   }
+
+  .scroll-translate {        
+    animation:trasnlateSrcoll ease both;
+    animation-delay: 2s;
+    animation-timeline: view();    
+    animation-range: entry 20% cover 48%;
+  }
+  .scroll-rotate {        
+    animation:rotateSrcoll ease both;
+    animation-delay: 2s;
+    animation-timeline: scroll(nearest);    
+    animation-range: entry 0% cover 100%;
+  }
+  .scroll-rotate-2 {        
+    animation:rotateSrcoll2 ease both;
+    animation-delay: 2s;
+    animation-timeline: view();    
+    animation-range: entry 50% cover 100%;
+  }
+  @keyframes trasnlateSrcoll{
+    from{
+        translate: 200px 0;        
+    }
+    to{
+        translate: 0 0;
+    }
+  }
+   @keyframes rotateSrcoll{
+    from{
+        rotate: 45deg;
+    }
+    to{
+        rotate: -45deg;
+    }
+  }
+  @keyframes rotateSrcoll2{
+    from{
+        rotate: -25deg;
+    }
+    to{
+        rotate: 20deg;
+    }
+  }
