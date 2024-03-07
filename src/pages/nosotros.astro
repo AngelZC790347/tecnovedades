@@ -57,10 +57,9 @@ import ImageBanner from "../components/ImageBanner.astro"
         font-weight: bold !important;
         text-decoration: underline;
     }
-     header {    
-    height: 450px;
-    display: ;    
-    
+    header {    
+        height: 450px;
+        display: ;        
     div{
         /* gap: 1.5em; */
         color: var(--fg-color-1);
@@ -68,6 +67,9 @@ import ImageBanner from "../components/ImageBanner.astro"
         display: grid;
         place-content: center;
         height: 100%;
+        h1{
+            color: inherit;
+        }
     }
     /* background-color: var(--fg-color-1); */
   }
@@ -90,7 +92,7 @@ import ImageBanner from "../components/ImageBanner.astro"
         }
     }
     h6{
-        font-family: var(--primary-font-bold);
+        font-family: var(--primary-font);
         font-weight: bold;
         text-transform: uppercase;
         font-size: calc(var(--size-medium) + 3px);

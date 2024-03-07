@@ -9,7 +9,8 @@ import Carrousel from "../components/Carrousel.astro";
 import CloudPath from "../components/paths/CloudPath.astro";
 import CardsData from "../../public/data/cards.json";
 import Card from "../components/Card.astro";
-import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
+import RoatedScaledAnimated from "../AnimatedComponents/RoatedScaledAnimated.vue";
+import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
 ---
 
 <Layout
@@ -42,7 +43,7 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
             ><i
               aria-hidden="true"
               class="fab fa-whatsapp"
-              style="margin:0px 4px;"></i>Comunicate con un asesor</a
+              style="margin:0px 4px;color:inherit"></i>Comunicate con un asesor</a
           >
         </PrimaryButton>
       </div>
@@ -62,13 +63,13 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
             alt=""
           />
         </div>
-        <div>
+        <div >            
           <p class="scroll-translate">
             Entendemos que la motivación principal de nuestros clientes es
             VENDER, por ello vamos directo al grano y te ayudamos a destacar
             ante tu competencia mediante una
-          </p>
-          <p class="scroll-translate">Página web profesional.</p>
+          </p>        
+          <p class="scroll-translate"><strong> Página web profesional.</strong></p>
           <p class="scroll-translate">
             Que te permitirá mostrar tus productos y servicios de manera eficaz,
             manejar ofertas y promociones, y lograr que tus clientes compren de
@@ -99,7 +100,7 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
         >
           <div>
             <div style={{ display: "flex" }}>
-              <b style={{ display: "inline" }}>“</b>
+              <b style={{ display: "inline",color:"#00A2FF" }}>“</b>
               <p style={{ display: "inline", paddingLeft: "0px" }}>
                 No solo nos limitamos a desarrollar tu página web, te brindamos
                 asesoría para que puedas obtener nuevos clientes.
@@ -168,20 +169,9 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
           Conoce mas de nosotros
         </SecondaryButton>
       </ImageBanner>
-      <div class="experience">
-        <h1>+ 8 anios en el Mercado</h1>
-        <svg
-          class="elipse"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1000 100"
-          preserveAspectRatio="none"
-        >
-          <path
-            class="elementor-shape-fill"
-            d="M500,97C126.7,96.3,0.8,19.8,0,0v100l1000,0V1C1000,19.4,873.3,97.8,500,97z"
-          ></path>
-        </svg>
-      </div>
+    <div>
+        <ExpirienceCounter client:only></ExpirienceCounter>
+    </div>
     </CenterContainer>
     <Divider>¿QUE INCLUYEN NUESTROS TRABAJOS?</Divider>
     <div class="services-list-container">
@@ -244,14 +234,15 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
             contenido de su página web como textos, imágenes y sus correos.
           </p>
         </ImageBanner>
-        <div class="phone-image scroll-rotate">
-            <img
-                src="./diseno-responsive-tecnovedadesweb.webp"
-                alt=""
-                width="350"         
-              />
-        </div>
-        
+        <div class="phone-image">            
+            <RoatedScaledAnimated rotate={50} threshold={60}  scale={1.8} client:only >                        
+                <img
+                    src="./diseno-responsive-tecnovedadesweb.webp"
+                    alt=""
+                    width="350"         
+                  />                
+            </RoatedScaledAnimated>
+        </div>        
         <ImageBanner
           imageSrc="./certificado-ssl-tecnovedadesweb.webp"
           imgDescription="certificado ssl"
@@ -457,7 +448,12 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
               <li>Llega a nuevos clientes</li>
             </ul>
           </div>
-          <PrimaryButton>Comunicate con un asesor</PrimaryButton>
+          <PrimaryButton><a href=""
+            ><i
+              aria-hidden="true"
+              class="fab fa-whatsapp"
+              style="margin:0px 4px;color:inherit"></i>Comunicate con un asesor</a
+          ></PrimaryButton>
         </ImageBanner>
       </CenterContainer>
       <CloudPath fill="#E5ECFC" />
@@ -470,7 +466,7 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
   </Divider>
   <div class="carrousel-container">
     <Carrousel />
-    <PrimaryButton>Ver mas trabajos</PrimaryButton>
+    <PrimaryButton><a href=""><i aria-hidden="true" class="far fa-images"></i>Ver más trabajos</a></PrimaryButton>
   </div>
 </Layout>
 
@@ -497,11 +493,15 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
       flex-direction: column;
       justify-content: center;
       text-align: center;
+      h1{
+        text-shadow: 12px 3px 13px rgba(0, 0, 0, 0.3);
+      }
       h3 {
         letter-spacing: -0.5px;
         text-transform: uppercase;
         margin: 20px auto;
         & > h1 {
+        
           color: var(--fg-color-1);
         }
       }
@@ -510,7 +510,7 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
       }
     }
   }
-  span {
+  h3>span {
     font-size: inherit;
     color: yellow;
     position: relative;
@@ -635,9 +635,9 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
   }
   .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 2.5em;
-    width: 60%;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 3.5em;
+    width: 50%;
     margin: 0 auto;
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
@@ -650,29 +650,13 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
     background-color: var(--fg-color-1);
     text-align: center;
     padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    gap:1rem
   }
-  .elipse {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    transform: rotate(180deg);
-    path {
-      fill: #ffffff;
-    }
-  }
-  .experience {
-    position: relative;
-    height: 150px;
-    overflow-y: hidden;
-    background-color: #d9e5ff;
-    h1 {
-      text-align: center;
-      z-index: 2;
-      align-items: center;
-      transform: translateY(25px);
-    }
-  }
+ 
   path {
+    z-index: -1;
     fill: #e5ecfc;
   }
   .botom-path {
@@ -685,7 +669,7 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
       transform: rotate(180deg);
     }
     svg:last-child {
-      transform: translateY(-10px);
+      transform: translateY(-10px);      
     }
     .text {
     }
@@ -712,7 +696,8 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
     }
     h4 {
       margin: 0;
-      font-size: 1.5em;
+      font-size: 1.3em;
+      font-weight: 400;
     }
   }
   b {
@@ -722,5 +707,9 @@ import RoatedAnimated from "../AnimatedComponents/RoatedAnimated.vue";
   }
   .list-bn {
     list-style-type: none;
+  }
+  i{
+    color: inherit;
+    margin-right: 10px;
   }
 </style>

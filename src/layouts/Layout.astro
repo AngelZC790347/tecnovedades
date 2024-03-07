@@ -29,8 +29,8 @@ const bgUrl = `url(${backgoundImg})`;
       
     <!-- BackGround Image -->
     <div class="absoluteBg"></div>     
-    <div id="my-scrollbar">
-        <Header />
+    <Header />
+    <div id="my-scrollbar">        
         <slot />
         <Footer />    
     </div>       
@@ -39,7 +39,7 @@ const bgUrl = `url(${backgoundImg})`;
   <script >
     import Scrollbar from 'smooth-scrollbar';
     Scrollbar.init(document.querySelector('#my-scrollbar')!,{
-        damping:0.02
+        damping:0.03
     });
 </script>  
 </html>
@@ -51,12 +51,14 @@ const bgUrl = `url(${backgoundImg})`;
   }
   @font-face {
     font-family: "Roboto";
-    src: url("/fonts/Roboto/Roboto-Light.ttf");
-  }
+    src: url("/fonts/Roboto/Roboto-Regular.ttf");
+    font-weight: 400;
+  } 
   @font-face {
-    font-family: "Roboto Bold";
-    src: url("/fonts/Roboto/Roboto-Medium.ttf");
-  }
+    font-family: "Roboto";
+    src: url("/fonts/Roboto/Roboto-Bold.ttf");
+    font-weight: bold;
+  } 
   @font-face {
     font-family: "Antonio";
     src: url("/fonts/Antonio/Antonio-VariableFont_wght.ttf");
@@ -65,14 +67,15 @@ const bgUrl = `url(${backgoundImg})`;
     --bg-color-1: #0053e1;
     --bg-color-2: #091929;
     --fg-color-1: #ffffff;
-    --fg-color: #333333;
+    --fg-color: #393939;
     --fg-color-2: #01f0dd;
     --fg-color-3: #ff9000;
     --size-title: 100px;
     --size-small: 14px;
-    --size-medium: 16px;
+    --size-medium: 19px;
     --size-large: 36px;
     --size-xl: 49px;
+    --size-xxl: 69px;
     --primary-font: "Roboto", Sans-serif;
     --primary-font-bold: "Roboto Bold", Sans-serif;
     --primary-font-condessed: "Roboto Condensed", Sans-serif;
@@ -100,7 +103,7 @@ const bgUrl = `url(${backgoundImg})`;
     position: relative;
   }
   #my-scrollbar{
-    height: 100dvh;
+    height: 100vh;    
   }
   h1,
   h2,
@@ -117,12 +120,11 @@ const bgUrl = `url(${backgoundImg})`;
   }
   * {
     font-size: var(--size-medium);
-    color: var(--fg-color-4);
+    color: var(--fg-color);
   }
   h1 {
     font-size: var(--size-xl);
-    font-weight: 600;
-    text-shadow: 12px 3px 13px rgba(0, 0, 0, 0.3);
+    font-weight: 600;    
     letter-spacing: 0.2;
     padding: 0;
   }

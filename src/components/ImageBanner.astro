@@ -3,7 +3,7 @@ interface Props{
     imageSrc:string,
     reverse:boolean,
     imgDescription:string,
-    imageClass?:string 
+    imageClass?:string,       
 }
 const {imageSrc,reverse,imgDescription,imageClass =""} = Astro.props
 const flexDirection = !reverse?"row":"row-reverse"
@@ -31,8 +31,7 @@ const flexDirection = !reverse?"row":"row-reverse"
         header{            
             text-align: end;            
         }
-        main{
-            /* width: 50%; */            
+        main{                        
             display: flex;
             flex-direction: column;
             text-align: left;

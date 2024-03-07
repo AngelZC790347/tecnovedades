@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PrimaryButton from "../components/Buttons/PrimaryButton.astro";
-import Portfolios from '../../public/data/portafolio.json'
+import Portfolios from '../../public/data/portafolio.json';
+import HoverBack from "../AnimatedComponents/HoverBack.vue";
 ---
 
 <Layout
@@ -12,13 +13,17 @@ import Portfolios from '../../public/data/portafolio.json'
     <div>
         <h1>NUESTROS TRABAJOS</h1>
         <h2>Nuesta mejor carta de presentacion</h2>
-        <PrimaryButton>Comunicate con un asesor</PrimaryButton>                
+        <PrimaryButton><a href=""><a href=""
+            ><i
+              aria-hidden="true"
+              class="fab fa-whatsapp"
+              style="margin:0px 4px;color:inherit"></i>Comunicate con un asesor</a></PrimaryButton>                
     </div>    
   </header>
   <main>
     <div class="ul-container">    
       <ul>
-          {Portfolios.map((p,index)=><div class="item" id={`slide-${index}`}><div class="hover-back"></div><img src={"./portafolio/"+p.imageUrl} alt="" width="418" height="418"/></div>)}
+          {Portfolios.map((p,index)=><div class="item" id={`slide-${index}`}><HoverBack><img src={"./portafolio/"+p.imageUrl} alt="" width="418" height="418"/></HoverBack></div>)}
       </ul>
   </div>
   </main>
@@ -28,13 +33,29 @@ import Portfolios from '../../public/data/portafolio.json'
     height: 450px;
     display: ;    
     div{
-        /* gap: 1.5em; */
+        gap: 0.5em;
         color: var(--fg-color-1);
         text-align: center;
         display: grid;
         place-content: center;
+        font-family: var(--primary-font);
         height: 100%;
-    }
+        h1{
+            color: inherit;
+            font-size: var(--size-xl);
+            letter-spacing: 0.2em;
+            /* font-family: inherit; */
+        }
+        h2{
+            font-family: inherit;
+            letter-spacing: 0em;
+            font-size: calc(var(--size-medium));
+            color: inherit;
+            font-weight: 200;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+    }    
     /* background-color: var(--fg-color-1); */
   }
   main{    
