@@ -17,9 +17,9 @@ const rotateProperty = computed(()=>{
 const scroll =  Scrollbar.get(document.getElementById("my-scrollbar")!)
 const currentYOfset = ref(scroll?.offset.y)
 const elementInView = ( percentageScroll = 100) => {        
-    console.log(scroll?.isVisible(document.getElementById("animated-el-rotated")!));    
+    console.log(scroll?.isVisible(document.getElementById("animated-el-scaled-rotated")!));    
     return (        
-     scroll?.isVisible(document.getElementById("animated-el-rotated")!)
+     scroll?.isVisible(document.getElementById("animated-el-scaled-rotated")!)
     );
 };
 const handleScrollAnimation = () => {
@@ -29,8 +29,7 @@ const handleScrollAnimation = () => {
     console.log(currentYOfset.value);       
     startY.value = scrollY    
     let deltaScroll = scrollDown?-Math.abs((scrollY - currentYOfset.value!)/20):Math.abs((scrollY - currentYOfset.value!)/20)    
-    console.log(deltaScroll);    
-    const element = document.querySelector(".rotate-el") as HTMLElement
+    console.log(deltaScroll);            
     if (elementInView(80)) {
         console.log("inview");  
         if(Math.abs(rotate.value+deltaScroll) <= props.threshold){
@@ -46,26 +45,26 @@ scroll?.addListener(handleScrollAnimation)
 </script>
 <template>    
       
-        <Transition>            
-            <div  id="animated-el-rotated" class="rotate-el">      
+        <Transition name="rotatedScaled">            
+            <div  id="animated-el-scaled-rotated" class="rotate-el">
                 <slot></slot>                        
             </div>
         </Transition>
     
 </template>
-<style >
+<style scoped>
 .rotate-el{
     transform: rotateZ(v-bind(rotateProperty)) scale(v-bind(scale));    
 
 }
-.v-enter-active,
-.v-leave-active {
-  transition: rotate scale 1.5s ease;
+.rotatedScaled-enter-active,
+.rotatedScaled-leave-active {
+    transition: rotate scale 1.5s ease;
 }
 
-.v-enter-from,
-.v-leave-to {
-    transform: rotateZ(v-bind(rotateProperty)) scale(v-bind(scale));    
-}
+    .rotatedScaled-enter-from,
+    .rotatedScaled-leave-to {
+        transform: rotateZ(v-bind(rotateProperty)) scale(v-bind(scale));    
+    }
 
 </style>

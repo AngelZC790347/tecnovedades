@@ -1,61 +1,90 @@
 ---
-interface Props{
-    imageSrc:string,
-    reverse:boolean,
-    imgDescription:string,
-    imageClass?:string,       
+import RotatedAnimated from '../AnimatedComponents/RotatedAnimated.vue';
+interface Props {
+  imageSrc: string;
+  reverse: boolean;
+  imgDescription: string;
+  imageClass?: string;
+  aniamted?: boolean;
 }
-const {imageSrc,reverse,imgDescription,imageClass =""} = Astro.props
-const flexDirection = !reverse?"row":"row-reverse"
+const {
+  imageSrc,
+  reverse,
+  imgDescription,
+  imageClass = "",
+  aniamted = false,
+} = Astro.props;
+const flexDirection = !reverse ? "row" : "row-reverse";
 ---
+
 <article>
-    <header>
-        <img class={imageClass} src={imageSrc} alt={imgDescription} width="700" height="700">
-    </header>
-    <main>
-        <slot name="bnTitle"></slot>
-        <slot name="bnSeparator"></slot>
-        <div>
-           <slot/>
-        </div>        
-        <div><slot name="bnFooter"></slot></div>                
-    </main>    
-</article>
-<style define:vars={{flexDirection}}>
-    article{                       
-        background-color: inherit;
-        display: flex;        
-        flex-direction: var(--flexDirection);     
-        padding:50px 0px;
-        gap: 3rem;                
-        header{            
-            text-align: end;            
-        }
-        main{                        
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            h3{
-                text-align: left;
-            }
-        }  
-        img{
-            width: 100%;
-            height: auto;            
-        }    
-        @media (max-width: 724px) {
-            &>*{                
-                max-width: 100%;
-                padding: 8px 20px;
-            }
-            & > main {
-                height: auto;
-            }
-            &>header{
-                text-align: center;
-            }
-            flex-direction: column;
-            align-items: center;            
-        }
+  <header>
+    {
+      aniamted ? (
+        <RotatedAnimated client:only rotate={0} multiplier={0.10} threshold={150}>
+        <img
+          class={imageClass}
+          src={imageSrc}
+          alt={imgDescription}
+          width="700"
+          height="700"
+        />
+        </RotatedAnimated>
+      ) : (
+      <img
+          class={imageClass}
+          src={imageSrc}
+          alt={imgDescription}
+          width="700"
+          height="700"
+        />
+      )
     }
+  </header>
+  <main>
+    <slot name="bnTitle" />
+    <slot name="bnSeparator" />
+    <div>
+      <slot />
+    </div>
+    <div><slot name="bnFooter" /></div>
+  </main>
+</article>
+<style define:vars={{ flexDirection }} scoped>
+  article {
+    background-color: inherit;
+    display: flex;
+    flex-direction: var(--flexDirection);
+    padding: 50px 0px;
+    gap: 3rem;
+    header {
+      text-align: end;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      h3 {
+        text-align: left;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    @media (max-width: 724px) {
+      & > * {
+        max-width: 100%;
+        padding: 8px 20px;
+      }
+      & > main {
+        height: auto;
+      }
+      & > header {
+        text-align: center;
+      }
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 </style>

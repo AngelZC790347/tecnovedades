@@ -11,6 +11,7 @@ import CardsData from "../../public/data/cards.json";
 import Card from "../components/Card.astro";
 import RoatedScaledAnimated from "../AnimatedComponents/RoatedScaledAnimated.vue";
 import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
+import TranslateAnimated from "../AnimatedComponents/TranslateAnimated.vue";
 ---
 
 <Layout
@@ -54,7 +55,7 @@ import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
         imgDescription="Haz crecer tu negocio"
         reverse={false}
       >
-        <h3 slot="bnTitle">DISEÑO WEB PROFESIONAL</h3>
+        <h3 style="font-family: var(--seconday-font-bold);line-height: 1.4em;font-weight: 100;" slot="bnTitle">DISEÑO WEB PROFESIONAL</h3>
         <div slot="bnSeparator" class="separator-img">
           <img
             src="https://tecnovedadesweb.com/wp-content/uploads/2022/09/linea.png"
@@ -63,20 +64,26 @@ import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
             alt=""
           />
         </div>
-        <div >            
-          <p class="scroll-translate">
+        <div >
+        <!-- <TranslateAnimated translateX={90} client:only> -->
+          <p>
             Entendemos que la motivación principal de nuestros clientes es
             VENDER, por ello vamos directo al grano y te ayudamos a destacar
             ante tu competencia mediante una
           </p>        
-          <p class="scroll-translate"><strong> Página web profesional.</strong></p>
-          <p class="scroll-translate">
+        <!-- </TranslateAnimated>            -->
+        <!-- <TranslateAnimated translateX={120} client:only> -->
+          <p><strong> Página web profesional.</strong></p>
+        <!-- </TranslateAnimated> -->
+        <!-- <TranslateAnimated translateX={140} client:only> -->
+          <p>
             Que te permitirá mostrar tus productos y servicios de manera eficaz,
             manejar ofertas y promociones, y lograr que tus clientes compren de
             manera sencilla a través de los diferentes medios de pago o ponerse
             en contacto contigo para poder requerir tus servicios de manera
             efectiva.
           </p>
+        <!-- </TranslateAnimated> -->
         </div>
         <SecondaryButton slot="bnFooter">
           Conoce nuestros trabajos
@@ -93,10 +100,11 @@ import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
           "min-height": "50dvh",
         }}
       >
-        <ImageBanner
+        <ImageBanner        
           imageSrc="./Ponemos-Tu-negocio-en-Google.webp"
           imgDescription="Tu negocio en interner en 5 dias"
           reverse
+          aniamted 
         >
           <div>
             <div style={{ display: "flex" }}>
@@ -235,7 +243,7 @@ import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
           </p>
         </ImageBanner>
         <div class="phone-image">            
-            <RoatedScaledAnimated rotate={50} threshold={60}  scale={1.8} client:only >                        
+            <RoatedScaledAnimated rotate={50} threshold={60}  scale={1} client:only >                        
                 <img
                     src="./diseno-responsive-tecnovedadesweb.webp"
                     alt=""
@@ -433,8 +441,8 @@ import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
         <ImageBanner
           imageSrc="./img-fondo-despega-tu-negocio-tecnovedadesweb.png"
           imgDescription="tecnovedades impulsamos tu negocio "
-          reverse={false}
-          imageClass="scroll-rotate-2"
+          reverse={false}          
+          aniamted
         >
           <h3 slot="bnTitle">HAZ DESPEGAR TU NEGOCIO</h3>
           <div>
@@ -460,9 +468,8 @@ import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
     </div>
   </main>
   <Divider>
-    NUESTROS TRABAJOS <div>
-      <span> NUESTRA MEJOR CARTA DE PRESENTACIÓN</span>
-    </div>
+        NUESTROS TRABAJOS 
+        <div slot="second"><span style="font-family:var(--primary-font-condessed);font-weight: 400;text-align:center;font-size:18px"> NUESTRA MEJOR CARTA DE PRESENTACIÓN</span></div>
   </Divider>
   <div class="carrousel-container">
     <Carrousel />
@@ -488,7 +495,7 @@ import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
     align-items: center;
     section {
       width: 70%;
-      height: 750px;
+      height: 850px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -500,6 +507,7 @@ import ExpirienceCounter from '../AnimatedComponents/ExperienceCounter.vue'
         letter-spacing: -0.5px;
         text-transform: uppercase;
         margin: 20px auto;
+        font-weight: 900;
         & > h1 {
         
           color: var(--fg-color-1);

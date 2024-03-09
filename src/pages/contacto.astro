@@ -77,9 +77,9 @@ import Layout from "../layouts/Layout.astro";
   header {
     height: 450px;
     display:;
-
     div {
       /* gap: 1.5em; */
+      transform: translateY(50px);
       color: var(--fg-color-1);
       text-align: center;
       display: grid;
@@ -116,6 +116,9 @@ import Layout from "../layouts/Layout.astro";
     gap: 1.2em;
     label {
       display: block;
+      color: #7A7A7A;
+      font-size: var(--size-small);
+      font-family: var(--primary-font);
     }
     div {
       padding-top: 20px;
@@ -126,7 +129,7 @@ import Layout from "../layouts/Layout.astro";
       textarea {
         margin-top: 10px;
         border: solid 1px rgb(209, 208, 208);
-        border-radius: 2px;
+        border-radius: 2px;        
         background-color: #f9fafb;
         &:not([type="checkbox"]) {
           width: 98%;
@@ -150,8 +153,34 @@ import Layout from "../layouts/Layout.astro";
   ul {
     list-style: none;
     padding: 0;
+    color: #7A7A7A;
+    font-size: var(--size-small);
+    font-family: var(--primary-font);
+    li{
+        color: inherit;
+        font-size: inherit;
+    }
     .list-icon{
       margin-right: 12px;
     }
+  }
+  #terms{
+    display: inline-block;
+    background: #e9eef2;
+    color: #555;
+    clear: none;
+    cursor: pointer;
+    line-height: 0;
+    height: 1.2em;
+    margin-left: 20px;
+    outline: 0;
+    padding: 0;
+    border-radius: 0.2em;
+    text-align: center;
+    vertical-align: middle;
+    width: 1.4em;
+    min-width: 1.4em;
+    transition: all .2s linear;
+}
   }
 </style>

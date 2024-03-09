@@ -1,15 +1,16 @@
 <div class="sub-tittle-container">
-    <h3><slot></slot></h3>    
+    <h3><i aria-hidden="true" class="far fa-lightbulb" style="margin-right:20px; font-size:inherit"></i><slot></slot></h3>    
     <slot name="second"></slot>
 </div>
 
 <style>
   .sub-tittle-container {
-    padding: 70px 0px;
+    padding: 80px 0px;
     text-align: center;
     color: var(--fg-color-1);
     & > h3 {      
       font-size: var(--size-large);
+      text-transform: uppercase;
     }    
     *{
       color: inherit;      
