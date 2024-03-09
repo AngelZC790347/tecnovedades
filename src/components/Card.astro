@@ -21,12 +21,13 @@ const {imageUrl,title,description} = Astro.props
 <style>
 	.main{
 		background-color: var(--fg-color-1);
-		min-height: 250px;	
+		min-height: 280px;	
 		padding: 0px 10px;
 		border:1px solid #82DFFE47;		
 		position: relative;
 		.front{			
 			/* position: absolute; */
+            transition: transform 1s;
 			display: grid;
 			place-content: center;
 			/* top: 0; */
@@ -45,10 +46,46 @@ const {imageUrl,title,description} = Astro.props
 			}					
 		}
 		.back{
+            transition: transform 1s;
+            background-color: var(--fg-color-1);
+            transform: rotateY(180deg); 
 			position: absolute;
 			z-index: -1;
 			top:0;
+            left: 0;
+            right: 0;
 			bottom: 0;
-		}		
+            display: flex;
+            gap: 0.5em;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 0px;
+            button{
+                width: fit-content;
+                padding: 10px 25px;
+                border: 0px solid;
+                font-size: 14px;
+                color: var(--fg-color-1);
+                background-color: #FF9000;
+                border-radius: 23px;
+            }
+            p{
+                font-size: var(--size-small);
+                line-height: 2;
+                font-family: var(--primary-font);
+                color: #2F2F2F;
+            }
+		}
+        &:hover{
+            .front{
+                z-index: -1;    
+                transform: rotateY(180deg);            
+            }
+            .back{
+                z-index: 1;
+                transform: rotateY(180deg);   
+            }
+        }	
 	}
 </style>

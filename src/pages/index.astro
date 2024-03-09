@@ -647,6 +647,7 @@ import TranslateAnimated from "../AnimatedComponents/TranslateAnimated.vue";
     gap: 3.5em;
     width: 50%;
     margin: 0 auto;
+    transform: translateY(-90px);
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
       width: auto;
@@ -673,8 +674,11 @@ import TranslateAnimated from "../AnimatedComponents/TranslateAnimated.vue";
   .paths {
     margin: 20px auto;
     position: relative;
+    
     svg:first-child {
       transform: rotate(180deg);
+      height: 106px;
+      width: calc(100% + 1.3px);
     }
     svg:last-child {
       transform: translateY(-10px);      
@@ -688,7 +692,7 @@ import TranslateAnimated from "../AnimatedComponents/TranslateAnimated.vue";
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.89em;
+    gap: 1em;
     right: 0;
     left: 0;
     top: 40%;
@@ -696,15 +700,17 @@ import TranslateAnimated from "../AnimatedComponents/TranslateAnimated.vue";
     transform: translateY(-40px);
     font-family: var(--primary-font);
     img {
-      width: 10%;
+      width: 6%;
       height: auto;
     }
     h3 {
       color: var(--fg-color-3);
+      font-size: 1.7rem;
+      letter-spacing: 0.2px;
     }
     h4 {
       margin: 0;
-      font-size: 1.3em;
+      font-size: 1.1rem;
       font-weight: 400;
     }
   }

@@ -42,11 +42,11 @@ scroll?.addListener(()=>{
       // Asegúrate de que el contador no se reinicie si ya está en marcha
         if (counter.value === 0) {
             const interval = setInterval(() => {
-            counter.value++;
+                counter.value++;
             // Puedes ajustar la duración y el valor final según tus necesidades
-            if (counter.value === 10) {
-                clearInterval(interval);
-            }
+                if (counter.value === 10) {
+                    clearInterval(interval);
+                }
             }, 1000);
         } 
         blocking.value=false
